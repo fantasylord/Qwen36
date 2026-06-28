@@ -29,6 +29,28 @@
           "type": "int",
           "zp_dtype": "torch.int8"
         }
+      },
+      "group_mtp": {
+        "format": "pack-quantized",
+        "input_activations": null,
+        "output_activations": null,
+        "targets": [
+          "re:.*mtp\\..*proj$"
+        ],
+        "weights": {
+          "actorder": null,
+          "block_structure": null,
+          "dynamic": false,
+          "group_size": 32,
+          "num_bits": 4,
+          "observer": "mse",
+          "observer_kwargs": {},
+          "scale_dtype": null,
+          "strategy": "group",
+          "symmetric": false,
+          "type": "int",
+          "zp_dtype": "torch.int8"
+        }
       }
     },
     "format": "pack-quantized",
@@ -337,14 +359,7 @@
       "model.language_model.layers.62.linear_attn.in_proj_b",
       "model.language_model.layers.62.linear_attn.in_proj_a",
       "lm_head",
-      "mtp.fc",
-      "mtp.layers.0.mlp.down_proj",
-      "mtp.layers.0.mlp.gate_proj",
-      "mtp.layers.0.mlp.up_proj",
-      "mtp.layers.0.self_attn.k_proj",
-      "mtp.layers.0.self_attn.o_proj",
-      "mtp.layers.0.self_attn.q_proj",
-      "mtp.layers.0.self_attn.v_proj"
+      "mtp.fc"
     ],
     "kv_cache_scheme": null,
     "quant_method": "compressed-tensors",
