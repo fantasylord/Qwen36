@@ -13,8 +13,12 @@ jobs:
     - name: Checkout code with LFS
       uses: actions/checkout@v4
       with:
-        fetch-depth: 1
+        fetch-depth: 0
         lfs: true
+        persist-credentials: false
+
+    - name: Download LFS objects
+      run: git lfs pull
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
