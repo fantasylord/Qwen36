@@ -32,8 +32,8 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ secrets.ALIYUN_ACR_REGISTRY }}/${{ secrets.ALIYUN_ACR_NAMESPACE }}/qwen3.6-27b-aggressive-awq:latest
-          ${{ secrets.ALIYUN_ACR_REGISTRY }}/${{ secrets.ALIYUN_ACR_NAMESPACE }}/qwen3.6-27b-aggressive-awq:${{ github.sha }}
+          ${{ secrets.ALIYUN_ACR_REGISTRY }}/${{ secrets.ALIYUN_ACR_NAMESPACE }}/G2PWModel_zh:latest
+          ${{ secrets.ALIYUN_ACR_REGISTRY }}/${{ secrets.ALIYUN_ACR_NAMESPACE }}/G2PWModel_zh:${{ github.sha }}
         platforms: linux/amd64
         cache-from: type=gha
         cache-to: type=gha,mode=max
